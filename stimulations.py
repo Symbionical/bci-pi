@@ -5,6 +5,7 @@ from datetime import datetime
 from datetime import date
 import bluepy.btle as btle #needs to be linux
 from brainflow.data_filter import DataFilter
+import numpy as np
 
 # stimulation legend: 1 = air pump, 2 = pink noise, 3 = tES
 
@@ -57,11 +58,9 @@ def stimulate_tES():
         except:
             pass
 
-    
-
 def log_stim(_log_code):
     dt = datetime.now()
     ts = datetime.timestamp(dt)
-    stimlog = [_log_code, ts]
+    stimlog = np.array([_log_code, ts])
     today = str(date.today())
     DataFilter.write_file(stimlog, today+'-stim_log.csv', 'a')

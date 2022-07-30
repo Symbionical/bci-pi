@@ -10,6 +10,7 @@ def main():
     bci.init_bci("Synthetic") # Use this for synthetically generated test data
     # bci.init_bci("Cyton") # Use this when using the actual bci
     bci.datalogging = True
+    stimulations.psychra_pump_init()
 
     # MAIN LOOP #
     while True:

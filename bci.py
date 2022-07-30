@@ -52,7 +52,7 @@ def init_bci(_board_type):
 
     # this is where to set optional preferences for the BCI (e.g. like which USB port to use etc)
     params = BrainFlowInputParams()
-    params.serial_port = "/deve/ttyUSB0"
+    params.serial_port = "/dev/ttyUSB0"
 
     # Parse BCI hardware information to the API
     board = BoardShim(board_id, params)
@@ -134,7 +134,7 @@ def get_alpha_theta_ratio(_data, _eeg_channels):
 
 def get_sleepieness(_sleepy_class):
 
-    _input = get_alpha_theta_ratio(data,eeg_channels)
+    _input = get_alpha_theta_ratio(data,eeg_channels_dozer)
     _sleepiness = _sleepy_class.predict(_input)
 
     return _sleepiness

@@ -33,7 +33,7 @@ def main():
 
         # if user is sleepy and cooldown is not active, begin stimulation and activate cooldown
         if sleepiness == 1 and cooldown == 0:
-            stimulations.stimulate_pink_noise()
+            stimulations.stimulate_all()
             cooldown = 28800 #28800 seconds = 480 minutes = 8 hours. Lets the user sleep
 
 if __name__ == "__main__":

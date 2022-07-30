@@ -1,3 +1,4 @@
+import csv
 import RPi.GPIO as GPIO
 from preferredsoundplayer import *
 import time
@@ -5,6 +6,7 @@ from datetime import datetime
 from datetime import date
 import bluepy.btle as btle #needs to be linux
 from brainflow.data_filter import DataFilter
+from csv import writer
 import numpy as np
 
 # stimulation legend: 1 = air pump, 2 = pink noise, 3 = tES
@@ -61,9 +63,8 @@ def stimulate_tES():
 def log_stim(_log_code):
     dt = datetime.now()
     ts = datetime.timestamp(dt)
-    stimlog = np.array(_log_code, [ts])
-    print(stimlog)
-    print(stimlog.shape)
-    print(stimlog.type)
+    stimlog = [_log_code, ts]
     today = str(date.today())
-    DataFilter.write_file(stimlog, today+'-EEG_log.csv', 'a')
+    with open(r'stimlog', 'a') as f:
+        writer = csv.writer(f)
+        writer.writerow(stimlog)

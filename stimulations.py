@@ -65,6 +65,6 @@ def log_stim(_log_code):
     ts = datetime.timestamp(dt)
     stimlog = [_log_code, ts]
     today = str(date.today())
-    with open(r'stimlog', 'a') as f:
+    with open(r'stimlog.csv', 'a') as f:
         writer = csv.writer(f)
         writer.writerow(stimlog)

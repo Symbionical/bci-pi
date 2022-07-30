@@ -61,7 +61,7 @@ def stimulate_tES():
 def log_stim(_log_code):
     dt = datetime.now()
     ts = datetime.timestamp(dt)
-    stimlog = np.array(_log_code, ts)
+    stimlog = np.array(_log_code, float(ts))
     print(stimlog)
     print(stimlog.shape)
     print(stimlog.type)

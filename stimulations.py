@@ -43,7 +43,7 @@ def stimulate_tES():
     print("trying tES")
 
     try:
-        focus1 = btle.Peripheral("B4:99:4C:4F:88:84") #specific for each focus device,
+        focus1 = btle.Peripheral("B4:99:4C:4F:84:AC") #specific for each focus device,
         service1 = focus1.getServiceByUUID("0000AAB0-F845-40FA-995D-658A43FEEA4C")
         characteristic1 = service1.getCharacteristics()[0]
         characteristic1.write((bytes([2, 7, 5, 0, 0, 0]))) # third number in the sequence is the program number on the focus
@@ -51,7 +51,7 @@ def stimulate_tES():
         log_stim(2)
     except:
         try:
-            focus1 = btle.Peripheral("B4:99:4C:4F:88:84") #specific for each focus device,
+            focus1 = btle.Peripheral("B4:99:4C:4F:84:AC") #specific for each focus device,
             service1 = focus1.getServiceByUUID("0000AAB0-F845-40FA-995D-658A43FEEA4C")
             characteristic1 = service1.getCharacteristics()[0]
             characteristic1.write((bytes([2, 7, 5, 0, 0, 0]))) # third number in the sequence is the program number on the focus

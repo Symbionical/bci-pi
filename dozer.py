@@ -8,8 +8,8 @@ def main():
     cooldown = 0
     sleepy_class = pickle.load(open('sleepy_class.sav', 'rb'))
     # initialise BCI parameters
-    bci.init_bci("Synthetic") # Use this for synthetically generated test data
-    # bci.init_bci("Cyton") # Use this when using the actual bci
+    # bci.init_bci("Synthetic") # Use this for synthetically generated test data
+    bci.init_bci("Cyton") # Use this when using the actual bci
     bci.datalogging = True
 
     # MAIN LOOP #

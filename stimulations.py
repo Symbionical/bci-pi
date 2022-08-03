@@ -27,8 +27,26 @@ def psychra_stimulate():
         psychra_activate_pump()
         print("breathe in " + str(i))
         time.sleep(8)
+        psychra_deactivate_pump()
         print("breathe out " + str(i))
         time.sleep(12)
+
+def pre_psychra_stimulate():
+    print("Recording Baseline, stimulation in 7 minutes")
+    time.sleep(60)
+    print("Recording Baseline, stimulation in 6 minutes")
+    time.sleep(60)
+    print("Recording Baseline, stimulation in 5 minutes")
+    time.sleep(60)
+    print("Recording Baseline, stimulation in 4 minutes")
+    time.sleep(60)
+    print("Recording Baseline, stimulation in 3 minutes")
+    time.sleep(60)
+    print("Recording Baseline, stimulation in 2 minutes")
+    time.sleep(60)
+    print("Recording Baseline, stimulation in 1 minute")
+    time.sleep(60)
+    psychra_stimulate()
 
 def stimulate_all():
     stimulate_pink_noise()

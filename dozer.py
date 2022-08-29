@@ -50,7 +50,7 @@ def main():
         #     print("sleepy")
 
         # if user is sleepy and cooldown is not active, begin stimulation and activate cooldown
-        if threshold_summation == 5 and cooldown == 0:
+        if threshold_summation == 3 and cooldown == 0:
             cooldown = 28800 #28800 seconds = 480 minutes = 8 hours. Lets the user sleep
             thread_2 = Thread(target= stimulation_thread)
             thread_2.start()

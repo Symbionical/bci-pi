@@ -20,7 +20,7 @@ def main():
         bci.update_data(bci.eeg_channels_dozer) # prompts the BCI to pull any new data from the data buffer
         # sleepiness = bci.get_sleepieness(sleepy_class)
         alpha_theta = bci.get_alpha_theta_ratio(bci.data, bci.eeg_channels_dozer)
-        mean_alpha_theta = alpha_theta.mean(axis=1)
+        mean_alpha_theta = alpha_theta.mean(axis=1)[0]
 
         print('Cooldown: %s' % str(cooldown))
 

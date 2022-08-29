@@ -35,7 +35,7 @@ def main():
         print("mean alpha theta:")
         print(mean_alpha_theta)
 
-        if mean_alpha_theta > 1.0:
+        if mean_alpha_theta > 2.0:
             threshold_summation += 1
         else:
             threshold_summation = 0
@@ -50,7 +50,7 @@ def main():
         #     print("sleepy")
 
         # if user is sleepy and cooldown is not active, begin stimulation and activate cooldown
-        if threshold_summation == 3 and cooldown == 0:
+        if threshold_summation == 5 and cooldown == 0:
             cooldown = 28800 #28800 seconds = 480 minutes = 8 hours. Lets the user sleep
             thread_2 = Thread(target= stimulation_thread)
             thread_2.start()

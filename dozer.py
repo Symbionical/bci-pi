@@ -28,6 +28,8 @@ def main():
         if cooldown > 0:
             cooldown -= 5
 
+        print(mean_alpha_theta)
+
         if mean_alpha_theta < 1.0:
             threshold_summation += 1
         else:

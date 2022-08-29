@@ -2,6 +2,7 @@ import time
 import pickle
 import bci
 import stimulations
+from threading import Thread
 
 def main():
 
@@ -28,12 +29,16 @@ def main():
         if cooldown > 0:
             cooldown -= 5
 
+        print("mean alpha theta:")
         print(mean_alpha_theta)
 
-        if mean_alpha_theta < 1.0:
+        if mean_alpha_theta > 1.0:
             threshold_summation += 1
         else:
             threshold_summation = 0
+
+        print("threshold_summation:")
+        print(threshold_summation)
 
         # if sleepiness == 0:
         #     print("not sleepy")
@@ -45,6 +50,9 @@ def main():
         if threshold_summation == 3 and cooldown == 0:
             stimulations.stimulate_all()
             cooldown = 28800 #28800 seconds = 480 minutes = 8 hours. Lets the user sleep
+            thread_2 = Thread(target= stimulation_thread)
+            thread_2.start()
+            thread_2.join
 
 if __name__ == "__main__":
     main()

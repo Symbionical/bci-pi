@@ -35,7 +35,7 @@ def main():
         print("mean alpha theta:")
         print(mean_alpha_theta)
 
-        if mean_alpha_theta > 2.0:
+        if mean_alpha_theta > 1.29:
             threshold_summation += 1
         else:
             threshold_summation = 0
